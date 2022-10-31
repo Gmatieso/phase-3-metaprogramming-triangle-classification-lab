@@ -24,4 +24,15 @@ class Triangle
   def not_zero?
     [a, b, c].all?(&:positive?)
   end
+
+  def triangle_inequality?
+    a + b > c && a + c > b && b + c > a
+  end
+
+  def validate_triangle
+    raise TriangleError unless not_zero? && triangle_inequality?
+  end
+  
+  class TriangleError < StandardError
+  end
 end
