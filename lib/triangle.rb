@@ -19,4 +19,9 @@ class Triangle
       :scalene
     end
   end
+
+  #instance method definition 
+  def not_zero?
+    [a, b, c].all?(&:positive?)
+  end
 end
